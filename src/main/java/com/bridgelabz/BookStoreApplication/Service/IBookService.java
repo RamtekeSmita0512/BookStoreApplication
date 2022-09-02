@@ -12,7 +12,7 @@ public interface IBookService {
     //getByName
     Response getBooksByName(String bookName);
     //post
-    Response creatNewBook(BookDTO bookDto);
+    Response createNewBook(BookDTO bookDto);
     //update
     Response updateBook(int id, BookDTO bookDto);
     //delete

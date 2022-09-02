@@ -18,8 +18,8 @@ public class BookService implements IBookService{
 	    private ModelMapper modelMapper;
 	    @Autowired
 	    private Response response;
-
-	    @Override
+	    
+	    	    @Override
 	    public Response getAllBooks() {
 	        return new Response("All books get Succefully",100,bookRepository.findAll());
 	    }
@@ -36,7 +36,7 @@ public class BookService implements IBookService{
 	    }
 
 	    @Override
-	    public Response creatNewBook(BookDTO bookDto) {
+	    public Response createNewBook(BookDTO bookDto) {
 	        BookStore bookStore = modelMapper.map(bookDto,BookStore.class);
 	        bookRepository.save(bookStore);
 	        System.out.println(bookStore.toString());
@@ -67,4 +67,10 @@ public class BookService implements IBookService{
 		public void setResponse(Response response) {
 			this.response = response;
 		}
+
+		public Integer getBookList() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
 }

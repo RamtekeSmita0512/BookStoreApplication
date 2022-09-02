@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bridgelabz.BookStoreApplication.UserModel.EmailService;
 import com.bridgelabz.BookStoreApplication.UserModel.User;
 import com.bridgelabz.BookStoreApplication.UserRepository.UserRepository;
 import com.bridgelabz.BookStoreApplication.Utility.Response;
@@ -21,6 +22,9 @@ public class UserService implements IUserService{
 
 	    @Autowired
 	    private Response response;
+	    
+	    @Autowired
+	    private EmailService emailService;
 
 	    public Response getAllUsers() {
 	        return new Response();
@@ -31,19 +35,20 @@ public class UserService implements IUserService{
 	        return new Response();
 	    }
 
-	    public Response creatNewUsers(UserDTO userDto) {
+	    public Response createNewUsers(UserDTO userDto) {
 	        User user = modelMapper.map(userDto, User.class);
 	        userRepository.save(user);
 	       
-	        Response object =new Response( );
+	        Response object =new Response("User added Successfully", 200, user );
 	        return object;
 	    }
+	   
 
 	    public Response updateUser(int id, UserDTO userDto) {
 	        User user = modelMapper.map(userDto, User.class);
 	        userRepository.save(user);
 	       
-	        return new Response();
+	        return new Response("User update Successfully", 200, user);
 	    }
 
 	    @Override
@@ -64,10 +69,14 @@ public class UserService implements IUserService{
 			this.response = response;
 		}
 
-		@Override
-		public Response createNewUsers(UserDTO userDto) {
-			// TODO Auto-generated method stub
-			return null;
+		public EmailService getEmailService() {
+			return emailService;
 		}
+
+		public void setEmailService(EmailService emailService) {
+			this.emailService = emailService;
+		}
+
+		
 
 }

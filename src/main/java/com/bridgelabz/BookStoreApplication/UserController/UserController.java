@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bridgelabz.BookStoreApplication.UserModel.EmailService;
 import com.bridgelabz.BookStoreApplication.UserService.UserService;
 import com.bridgelabz.BookStoreApplication.Utility.Response;
 import com.bridgelabz.BookStoreApplication.Utility.UserDTO;
@@ -23,7 +24,14 @@ public class UserController {
 	 @Autowired
     private UserService userService;
 	
+   @Autowired
+   private EmailService emailService;
    
+   @GetMapping("/sendemail")
+	public String sendEmail() {
+		return emailService.sendEmail();
+		
+	}
 
     @GetMapping("/users")
     public ResponseEntity<Response> getAllUsers() {
@@ -39,7 +47,7 @@ public class UserController {
 
     @PostMapping("/users")
     public ResponseEntity<Response> addUser(@Valid @RequestBody UserDTO userDto) {
-        Response response = userService.creatNewUsers(userDto);
+        Response response = userService.createNewUsers(userDto);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
@@ -54,4 +62,12 @@ public class UserController {
         Response response = userService.deleteUser(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+	public EmailService getEmailService() {
+		return emailService;
+	}
+
+	public void setEmailService(EmailService emailService) {
+		this.emailService = emailService;
+	}
 }

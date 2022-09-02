@@ -6,8 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import com.bridgelabz.BookStoreApplication.UserModel.Cart;
 
+import com.bridgelabz.BookStoreApplication.UserModel.Cart;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,7 +25,7 @@ public class BookStore {
 	    private int id;
 	    private String bookName;
 	    private String authorName;
-	    private float price;
+	    private int price;
 	    private int quantity;
 	    
 	    @ManyToOne(cascade = CascadeType.ALL )
@@ -49,10 +49,10 @@ public class BookStore {
 		public void setAuthorName(String authorName) {
 			this.authorName = authorName;
 		}
-		public float getPrice() {
+		public int getPrice() {
 			return price;
 		}
-		public void setPrice(float price) {
+		public void setPrice(int price) {
 			this.price = price;
 		}
 		public int getQuantity() {
@@ -61,7 +61,7 @@ public class BookStore {
 		public void setQuantity(int quantity) {
 			this.quantity = quantity;
 		}
-	
+		
 	
 	    
 }
