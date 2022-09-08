@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.BookStoreApplication.UserModel.EmailService;
+import com.bridgelabz.BookStoreApplication.UserModel.Login;
 import com.bridgelabz.BookStoreApplication.UserService.UserService;
 import com.bridgelabz.BookStoreApplication.Utility.Response;
 import com.bridgelabz.BookStoreApplication.Utility.UserDTO;
@@ -32,6 +33,14 @@ public class UserController {
 		return emailService.sendEmail();
 		
 	}
+   @Autowired
+   private Login login;
+   
+   @PostMapping("/login")
+   public ResponseEntity<Response> checkLogin(@RequestBody Login login){
+	   Response response =  new Response("post call success",300, login.checkLogin(login));
+       return new ResponseEntity<>(response, HttpStatus.OK);
+   }
 
     @GetMapping("/users")
     public ResponseEntity<Response> getAllUsers() {
@@ -69,5 +78,13 @@ public class UserController {
 
 	public void setEmailService(EmailService emailService) {
 		this.emailService = emailService;
+	}
+
+	public Login getLogin() {
+		return login;
+	}
+
+	public void setLogin(Login login) {
+		this.login = login;
 	}
 }

@@ -2,7 +2,6 @@ package com.bridgelabz.BookStoreApplication.Utility;
 
 
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 import lombok.AllArgsConstructor;

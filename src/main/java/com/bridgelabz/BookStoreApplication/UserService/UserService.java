@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bridgelabz.BookStoreApplication.UserModel.EmailService;
+import com.bridgelabz.BookStoreApplication.UserModel.Login;
+import com.bridgelabz.BookStoreApplication.UserModel.Registration;
 import com.bridgelabz.BookStoreApplication.UserModel.User;
 import com.bridgelabz.BookStoreApplication.UserRepository.UserRepository;
 import com.bridgelabz.BookStoreApplication.Utility.Response;
@@ -25,7 +27,12 @@ public class UserService implements IUserService{
 	    
 	    @Autowired
 	    private EmailService emailService;
-
+	    
+	    @Autowired
+	    private Login login;
+	    
+	  
+		
 	    public Response getAllUsers() {
 	        return new Response();
 	    }
@@ -50,7 +57,18 @@ public class UserService implements IUserService{
 	       
 	        return new Response("User update Successfully", 200, user);
 	    }
-
+	    public Login checkLogin(UserDTO userDto) {
+	        Registration registration = UserRepository.findByUserName(userDto.userName);
+	        if (registration != null) {
+	            if (registration.getPassword().equals(userDto.getPassword())) {
+	                Login login = Login.Build(userDto.getUserName(), userDto.getPassword(), true, registration.getId());
+	                return login;
+	            } else {
+	                return Login.Build(userDto.getUserName(), userDto.getPassword(), false, registration.getId());
+	            }
+	        }
+			return login;
+	        }
 	    @Override
 	    public Response deleteUsersById(int id) {
 	        return null;
@@ -75,6 +93,20 @@ public class UserService implements IUserService{
 
 		public void setEmailService(EmailService emailService) {
 			this.emailService = emailService;
+		}
+
+		public Login getLogin() {
+			return login;
+		}
+
+		public void setLogin(Login login) {
+			this.login = login;
+		}
+
+		@Override
+		public Login loginCheck(UserDTO userDto) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 
 		

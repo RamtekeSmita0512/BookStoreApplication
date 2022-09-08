@@ -34,6 +34,8 @@ public class UserDTO {
    @Pattern(regexp = "^[0-9]{6}$" , message = "Pincode is only 6 digit..")
     private String pinCode;
 
+public Object userName;
+
 	public String getName() {
 		return name;
 	}
@@ -73,4 +75,15 @@ public class UserDTO {
 	public void setPinCode(String pinCode) {
 		this.pinCode = pinCode;
 	}
+
+	public Object getPassword() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getUserName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
