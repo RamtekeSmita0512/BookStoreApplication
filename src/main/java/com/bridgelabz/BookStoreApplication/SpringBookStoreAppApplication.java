@@ -8,10 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 
-
-
-
-
 @SpringBootApplication
 public class SpringBookStoreAppApplication {
 
@@ -21,7 +17,7 @@ public class SpringBookStoreAppApplication {
    }
 
     @Bean
-    public ModelMapper modelMapper() {
+    ModelMapper modelMapper() {
         return new ModelMapper();
     }
 

@@ -1,4 +1,4 @@
-package com.bridgelabz.BookStoreApplication.Model;
+package com.bridgelabz.BookStoreApplication.book.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -7,7 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import com.bridgelabz.BookStoreApplication.UserModel.Cart;
+import com.bridgelabz.BookStoreApplication.user.model.Cart;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

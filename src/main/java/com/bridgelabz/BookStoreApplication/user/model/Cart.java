@@ -1,4 +1,4 @@
-package com.bridgelabz.BookStoreApplication.UserModel;
+package com.bridgelabz.BookStoreApplication.user.model;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import com.bridgelabz.BookStoreApplication.Model.BookStore;
+import com.bridgelabz.BookStoreApplication.book.model.BookStore;
 
 
 

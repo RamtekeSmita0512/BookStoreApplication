@@ -1,4 +1,4 @@
-package com.bridgelabz.BookStoreApplication.Exception;
+package com.bridgelabz.BookStoreApplication.exception;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.bridgelabz.BookStoreApplication.Utility.Response;
+import com.bridgelabz.BookStoreApplication.utility.Response;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {

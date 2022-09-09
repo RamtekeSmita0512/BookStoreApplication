@@ -1,4 +1,4 @@
-package com.bridgelabz.BookStoreApplication.book.Controller;
+package com.bridgelabz.BookStoreApplication.book.controller;
 
 import javax.validation.Valid;
 
@@ -13,22 +13,17 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bridgelabz.BookStoreApplication.Service.BookService;
-import com.bridgelabz.BookStoreApplication.Utility.BookDTO;
-import com.bridgelabz.BookStoreApplication.Utility.Response;
+import com.bridgelabz.BookStoreApplication.book.service.BookService;
+import com.bridgelabz.BookStoreApplication.utility.BookDTO;
+import com.bridgelabz.BookStoreApplication.utility.Response;
 
 @RestController
-//@RequestMapping("/bookstore")
+
 public class BookStoreController {
 	
 	  @Autowired
 	    private BookService bookService;
-//	  
-//	  @RequestMapping(value = {"", "/", "/home"})
-//	    public ResponseEntity<Response> getBookStore(){
-//	        Response response = new Response("Books available are",200, bookService.getBookList());
-//	        return new ResponseEntity<Response>(response, HttpStatus.OK);
-//	    }
+
 	  
 	@GetMapping("/books")
     public ResponseEntity<Response> getAllBooks(){

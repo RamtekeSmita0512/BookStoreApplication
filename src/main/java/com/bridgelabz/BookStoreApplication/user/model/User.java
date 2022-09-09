@@ -1,4 +1,4 @@
-package com.bridgelabz.BookStoreApplication.UserModel;
+package com.bridgelabz.BookStoreApplication.user.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -25,6 +25,7 @@ public class User  {
 	    private String address;
 	    private String city;
 	    private String pinCode;
+	    private String emailId;
 
 	    @OneToOne(cascade = CascadeType.ALL , mappedBy = "user")
 	    private Cart cart;
@@ -65,6 +66,30 @@ public class User  {
 		}
 		public void setPinCode(String pinCode) {
 			this.pinCode = pinCode;
+		}
+		public void setVerify(boolean b) {
+			// TODO Auto-generated method stub
+			
+		}
+		public Object getEmailId() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		public String getFirstName() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		public String getPassword() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		public int getUserId() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+		public void setPassword(String password) {
+			// TODO Auto-generated method stub
+			
 		}
 
 	

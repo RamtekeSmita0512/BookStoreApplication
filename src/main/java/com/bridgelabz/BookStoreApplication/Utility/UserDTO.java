@@ -1,4 +1,4 @@
-package com.bridgelabz.BookStoreApplication.Utility;
+package com.bridgelabz.BookStoreApplication.utility;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;

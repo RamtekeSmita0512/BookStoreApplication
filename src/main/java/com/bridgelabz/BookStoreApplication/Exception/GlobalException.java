@@ -1,4 +1,4 @@
-package com.bridgelabz.BookStoreApplication.Exception;
+package com.bridgelabz.BookStoreApplication.exception;
 
 public class GlobalException extends RuntimeException {
 	

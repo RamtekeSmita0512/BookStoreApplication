@@ -1,4 +1,4 @@
-package com.bridgelabz.BookStoreApplication.UserModel;
+package com.bridgelabz.BookStoreApplication.user.util;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +27,11 @@ public class EmailService {
 			javaMailSender.send(message);
 			
 			return "Mail sent Successfully";
+		}
+
+		public void sendEmail(Object emailId, String string, String string2) {
+			// TODO Auto-generated method stub
+			
 		}
 
 	

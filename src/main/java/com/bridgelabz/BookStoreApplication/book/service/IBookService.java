@@ -1,7 +1,7 @@
-package com.bridgelabz.BookStoreApplication.Service;
+package com.bridgelabz.BookStoreApplication.book.service;
 
-import com.bridgelabz.BookStoreApplication.Utility.BookDTO;
-import com.bridgelabz.BookStoreApplication.Utility.Response;
+import com.bridgelabz.BookStoreApplication.utility.BookDTO;
+import com.bridgelabz.BookStoreApplication.utility.Response;
 
 public interface IBookService {
 

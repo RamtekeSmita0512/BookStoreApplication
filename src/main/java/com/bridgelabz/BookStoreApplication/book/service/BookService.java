@@ -1,12 +1,13 @@
-package com.bridgelabz.BookStoreApplication.Service;
+package com.bridgelabz.BookStoreApplication.book.service;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.bridgelabz.BookStoreApplication.Model.BookStore;
-import com.bridgelabz.BookStoreApplication.Repository.BookRepository;
-import com.bridgelabz.BookStoreApplication.Utility.BookDTO;
-import com.bridgelabz.BookStoreApplication.Utility.Response;
+
+import com.bridgelabz.BookStoreApplication.book.model.BookStore;
+import com.bridgelabz.BookStoreApplication.book.repository.BookRepository;
+import com.bridgelabz.BookStoreApplication.utility.BookDTO;
+import com.bridgelabz.BookStoreApplication.utility.Response;
 
 @Service
 public class BookService implements IBookService{
